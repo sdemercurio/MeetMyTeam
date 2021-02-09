@@ -1,0 +1,24 @@
+{
+  "name": "MeetMyTeam",
+  "version": "1.0.0",
+  "description": "OOP: Team profile generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sdemercurio/MeetMyTeam.git"
+  },
+  "keywords": [],
+  "author": "Sarah DeMercurio",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sdemercurio/MeetMyTeam/issues"
+  },
+  "homepage": "https://github.com/sdemercurio/MeetMyTeam#readme",
+  "dependencies": {
+    "inquirer": "^7.3.3",
+    "jest": "^26.6.3"
+  }
+}
