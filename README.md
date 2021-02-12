@@ -1,4 +1,4 @@
 # MeetMyTeam
 OOP: Team profile generator
 
-![UML_diagram](company_profile_CLI.jpg)
+![UML_diagram](assets/imgs/company_profile_CLI.jpeg)
