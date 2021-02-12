@@ -1,22 +1,22 @@
 {
-  "name": "MeetMyTeam",
+  "name": "company_profile_CLI",
   "version": "1.0.0",
   "description": "OOP: Team profile generator",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sdemercurio/MeetMyTeam.git"
+    "url": "git+https://github.com/sdemercurio/company_profile_CLI.git"
   },
   "keywords": [],
   "author": "Sarah DeMercurio",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sdemercurio/MeetMyTeam/issues"
+    "url": "https://github.com/sdemercurio/company_profile_CLI/issues"
   },
-  "homepage": "https://github.com/sdemercurio/MeetMyTeam#readme",
+  "homepage": "https://github.com/sdemercurio/company_profile_CLI#readme",
   "dependencies": {
     "inquirer": "^7.3.3",
     "jest": "^26.6.3"
