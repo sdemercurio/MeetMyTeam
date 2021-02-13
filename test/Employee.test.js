@@ -3,7 +3,7 @@ const Employee = require('../lib/Employee');
 describe("Employee", () => {
     it("Will instantiate an instance of Employee barring valid arguments", () => {
         const e = new Employee('Sarah', 100, 'sdemercurioMI@gmail.com');
-        // expect(emp).toBe("object");
+        // expect(e).toBe("object");
         expect(e.name).toBe('Sarah');
         expect(e.id).toBe(100);
         expect(e.email).toBe('sdemercurioMI@gmail.com');
