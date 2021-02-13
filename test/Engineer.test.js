@@ -1,6 +1,14 @@
 const Engineer = require('../lib/Engineer');
 
 describe("gitHub", () => {
+    describe("Initialization", () => {
+        it("Should create an object of name, id, and email if provided a valid argument", () => {
+            const e = new Engineer('Sarah', 100, 'sdemercurioMI@gmail.com');
+    
+            expect(e.name).toEqual("Sarah");
+            expect(e.id).toEqual(100);
+            expect(e.email).toEqual("sdemercurioMI@gmail.com");
+        });
     it("Will return a string", () => {
         const gh = "sdemercurio";
         const e = new Engineer('Sarah', 100, 'sdemercurioMI@gmail.com', gh);
@@ -22,4 +30,5 @@ describe("gitHub", () => {
             expect(e.getRole()).toEqual(t);
         });
     });
+});
 });

@@ -9,4 +9,8 @@ Each child class possesses their own unique property and method in conjunction w
 ![UML_diagram](assets/imgs/company_profile_CLI.jpeg)
 
 ## Testing
-Unit tests are written for each class, ensuring each test passes. The initial tests are designed to fail. Once the most simple code is written to get the tests to pass, code will then be refactored to deliver a solid, functioning app.
+Unit tests are written for each class, ensuring each test passes. The initial tests are designed to fail until the most simple code is written to get the tests to pass. 
+
+![UML_diagram](assets/imgs/passed_tests.PNG)
+
+Once initial tests have passed, code will then be refactored to deliver a solid, functioning app.

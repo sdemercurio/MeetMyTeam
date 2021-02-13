@@ -1,6 +1,14 @@
 const Manager = require('../lib/Manager');
 
 describe("officeNumber", () => {
+    describe("Initialization", () => {
+        it("Should create an object of name, id, and email if provided a valid argument", () => {
+            const m = new Manager('Sarah', 100, 'sdemercurioMI@gmail.com');
+    
+            expect(m.name).toEqual("Sarah");
+            expect(m.id).toEqual(100);
+            expect(m.email).toEqual("sdemercurioMI@gmail.com");
+        });
     it("Will return an integer", () => {
         const t = 1;
         const m = new Manager('Sarah', 100, 'sdemercurioMI@gmail.com', t);
@@ -22,4 +30,5 @@ describe("officeNumber", () => {
             expect(m.getRole()).toEqual(t);
         });
     });
+});
 });

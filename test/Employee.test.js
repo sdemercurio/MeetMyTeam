@@ -6,9 +6,10 @@ describe("Employee", () => {
         const e = new Employee('Sarah', 100, 'sdemercurioMI@gmail.com');
 
         expect(e.name).toEqual("Sarah");
-        expect(e.id).toEqual("100");
+        expect(e.id).toEqual(100);
         expect(e.email).toEqual("sdemercurioMI@gmail.com");
-    })
+    });
+    
     it("Will instantiate an instance of Employee barring valid arguments", () => {
         const e = new Employee('Sarah', 100, 'sdemercurioMI@gmail.com');
         // expect(e).toBe("object");
