@@ -1,6 +1,14 @@
 const Employee = require('../lib/Employee');
 
 describe("Employee", () => {
+    describe("Initialization", () => {
+    it("Should create an object of name, id, and email if provided a valid argument", () => {
+        const e = new Employee('Sarah', 100, 'sdemercurioMI@gmail.com');
+
+        expect(e.name).toEqual("Sarah");
+        expect(e.id).toEqual("100");
+        expect(e.email).toEqual("sdemercurioMI@gmail.com");
+    })
     it("Will instantiate an instance of Employee barring valid arguments", () => {
         const e = new Employee('Sarah', 100, 'sdemercurioMI@gmail.com');
         // expect(e).toBe("object");
@@ -40,4 +48,5 @@ describe("Employee", () => {
             expect(e.getRole()).toEqual(t);
         });
     });
+});
 });
