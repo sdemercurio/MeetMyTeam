@@ -16,8 +16,8 @@ class Employee {
         this.email = email;
         if(this.name === undefined || this.id === undefined || this.email === undefined) {
             throw new Error("Expected parameters must be valid arguments");
-        }
-    }
+        };
+    };
 ```
 
 ```javascript
