@@ -21,12 +21,12 @@ class Employee {
 ```
 
 ```javascript
-class Intern extends Employee {
-    constructor(name, id, email, school) {
+class Manager extends Employee {
+    constructor(name, id, email, officeNumber) {
         super(name, id, email);
-        this.school = school;
-        if( typeof this.name !== "string") {
-            throw new Error("Expected parameter 'name' to be a non-empty string");
+        this.officeNumber = officeNumber;
+        if(this.name === undefined || this.id === undefined || this.email === undefined) {
+            throw new Error("Expected parameters must be valid arguments");
         };
     };
 
