@@ -4,8 +4,6 @@ OOP: Team profile generator
 ## Classes:
 The application includes ```Employee```, ```Manager```, ```Engineer```, and ```Intern``` classes. The latter three child classes extend from the parent class ```Employee```. These child classes will inheret the properties ```name```, ```id```, and ```email```, along with their methods.
 
-Each child class possesses their own unique property and method in conjunction with those inherited from the parent class.
-
 ![UML_diagram](assets/imgs/company_profile_CLI.jpeg)
 
 ```javascript
@@ -19,6 +17,7 @@ class Employee {
         };
     };
 ```
+Each child class possesses their own unique property and method in conjunction with those inherited from the parent class using the ```super``` function.
 
 ```javascript
 class Manager extends Employee {

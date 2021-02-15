@@ -1,13 +1,11 @@
 // consider when: in question object and call function to repeat questions when new employee is added.
-const Employee = require('./lib/Employee');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const inquirer = require('inquirer');
-const path = require('path');
-const fs = require('fs');
-const util = require('util');
-const renderHTML = require('./lib/renderHTML'); 
+const renderHTML = require('./lib/renderHTML');
+const fs = require('fs'); 
+let file = 'render.html';
 
 const q = [
     {
@@ -96,7 +94,10 @@ const init = async () => {
             const {more} = await inquirer.prompt(addEmployee);
             addAnother = more;
         }
+        fs.writeFile(file, renderHTML(manager, engineer, intern), (err) => 
+        err ? console.log(err) : console.log("HTML file write successful"));
     }
+    
 };
 
 init();
