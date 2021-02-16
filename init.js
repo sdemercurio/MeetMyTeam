@@ -7,11 +7,13 @@ const renderHTML = require('./lib/renderHTML');
 const fs = require('fs');
 let file = 'render.html';
 
-const employees = [];
+const managers = [];
+const engineers = [];
+const interns = [];
 
 // questions for parent class, inherited by the child classes
 
-function init() {
+const init = () => {
     inquirer.prompt([{
         type: "input",
         name: "name",
@@ -39,7 +41,7 @@ function init() {
             ]
     }])
 
-        // incorparating questions for child classes
+        // incorporating questions for child classes
 
         .then(eRole => {
             if (eRole.role === 'Manager') {
@@ -50,7 +52,7 @@ function init() {
                 }])
                     .then(er => {
                         const newManager = new Manager(eRole.name, eRole.id, eRole.email, eRole.role, er.officeNumber)
-                        employees.push(newManager);
+                        managers.push(newManager);
                         addAnother()
                     })
             } else if (eRole.role === 'Engineer') {
@@ -61,7 +63,7 @@ function init() {
                 }])
                     .then(er => {
                         const newEngineer = new Engineer(eRole.name, eRole.id, eRole.email, eRole.role, er.gitHub)
-                        employees.push(newEngineer);
+                        engineers.push(newEngineer);
                         addAnother()
                     })
             } else if (eRole.role === 'Intern') {
@@ -72,10 +74,12 @@ function init() {
                 }])
                     .then(er => {
                         const newIntern = new Intern(eRole.name, eRole.id, eRole.email, eRole.role, er.school)
-                        employees.push(newIntern);
+                        interns.push(newIntern);
                         addAnother()
                     })
             }
+
+            // addAnother() will allow the user to add more employees if they so choose
             function addAnother() {
                 inquirer.prompt([{
                     type: "confirm",
@@ -84,9 +88,10 @@ function init() {
                 }])
                     .then(response => {
                         if (response.more === true) {
-                            init(employees)
-                        } else {
-                            console.log('team', employees)
+                            init(managers, engineers, interns)
+                        }else{ (response.more === "No")
+                            console.log(managers, engineers, interns);
+                            writeHTML(); 
                         }
                     })
             }
@@ -94,3 +99,8 @@ function init() {
 }
 
 init();
+
+const writeHTML = () => {
+    fs.writeFile(file, renderHTML(managers, engineers, interns) , (err) =>
+    err ? console.log(err) : console.log('Your Team Profile Application has been generated successfully!'))
+}
