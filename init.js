@@ -4,11 +4,15 @@ const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const inquirer = require('inquirer');
 const renderHTML = require('./lib/renderHTML');
-const fs = require('fs'); 
+const fs = require('fs');
 let file = 'render.html';
 
-const q = [
-    {
+const employees = [];
+
+// questions for parent class, inherited by the child classes
+
+function init() {
+    inquirer.prompt([{
         type: "input",
         name: "name",
         message: "Please enter employee name",
@@ -28,76 +32,65 @@ const q = [
         name: "role",
         message: "Please select employee role",
         choices:
-        [
-            "Manager",
-            "Engineer",
-            "Intern",
-        ]
-    },
-];
+            [
+                "Manager",
+                "Engineer",
+                "Intern",
+            ]
+    }])
 
-const qManager = [
-    {
-        type: "input",
-        name: "officeNumber",
-        message: "Please enter employee's office number",
-    },
-];
+        // incorparating questions for child classes
 
-const qEngineer = [
-    {
-        type: "input",
-        name: "gitHub",
-        message: "Please enter employee's GitHub username",
-    },
-];
-
-const qIntern = [
-    {
-        type: "input",
-        name: "School",
-        message: "Please enter employee's school",
-    },
-];
-
-const addEmployee = [
-    {
-        type: "confirm",
-        name: "more",
-        message: "Would you like to add another employee?",
-    },
-];
-
-const init = async () => {
-    const manager = [];
-    const engineer = [];
-    const intern = [];
-
-    let addAnother = true;
-    
-    while (addAnother) {
-        const {name, id, email, role,} = await inquirer.prompt(q);
-
-        if(role === 'Manager') {
-            const {officeNumber} = await inquirer.prompt(qManager);
-            manager.push(new Manager(name, id, email, officeNumber));
-
-        }else if (role === 'Engineer') {
-            const {gitHub} = await inquirer.prompt(qEngineer);
-            engineer.push(new Engineer(name, id, email, gitHub));
-
-        }else if (role === 'Intern') {
-            const {school} = await inquirer.prompt(qIntern);
-            intern.push(new Intern(name, id, email, school));
-
-        }if (addAnother === true) {
-            const {more} = await inquirer.prompt(addEmployee);
-            addAnother = more;
-        }
-        fs.writeFile(file, renderHTML(manager, engineer, intern), (err) => 
-        err ? console.log(err) : console.log("HTML file write successful"));
-    }
-    
-};
+        .then(eRole => {
+            if (eRole.role === 'Manager') {
+                inquirer.prompt([{
+                    type: "input",
+                    name: "officeNumber",
+                    message: "Please enter employee's office number",
+                }])
+                    .then(er => {
+                        const newManager = new Manager(eRole.name, eRole.id, eRole.email, eRole.role, er.officeNumber)
+                        employees.push(newManager);
+                        addAnother()
+                    })
+            } else if (eRole.role === 'Engineer') {
+                inquirer.prompt([{
+                    type: "input",
+                    name: "gitHub",
+                    message: "Please enter GitHub username",
+                }])
+                    .then(er => {
+                        const newEngineer = new Engineer(eRole.name, eRole.id, eRole.email, eRole.role, er.gitHub)
+                        employees.push(newEngineer);
+                        addAnother()
+                    })
+            } else if (eRole.role === 'Intern') {
+                inquirer.prompt([{
+                    type: "input",
+                    name: "school",
+                    message: "Please enter attended school",
+                }])
+                    .then(er => {
+                        const newIntern = new Intern(eRole.name, eRole.id, eRole.email, eRole.role, er.school)
+                        employees.push(newIntern);
+                        addAnother()
+                    })
+            }
+            function addAnother() {
+                inquirer.prompt([{
+                    type: "confirm",
+                    name: "more",
+                    message: "Would you like to add another employee?"
+                }])
+                    .then(response => {
+                        if (response.more === true) {
+                            init(employees)
+                        } else {
+                            console.log('team', employees)
+                        }
+                    })
+            }
+        })
+}
 
 init();
