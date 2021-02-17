@@ -102,5 +102,5 @@ init();
 
 const writeHTML = () => {
     fs.writeFile(file, renderHTML(managers, engineers, interns) , (err) =>
-    err ? console.log(err) : console.log('Your Team Profile Application has been generated successfully!'))
+    err ? console.log(err) : console.log('Success!'))
 }
