@@ -1,10 +1,12 @@
 #header {
     width: 100%;
     display: flex;
+    font-family: 'Spartan', sans-serif;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: rgb(255, 235, 193);
+    background-color: rgb(112, 153, 165);
+    color: white;
     padding: 20px;
 }
   
@@ -13,4 +15,27 @@
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-gap: 10px;
     margin-top: 25px;
+    background-color: rgb(219, 240, 252);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 10px 10px 2px #888888;
+    
   }
+
+  p {
+    margin: 0em;
+  }
+
+  h3 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    margin-bottom: -10px;
+  }
+
+  h4 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    margin: 0em;
+  }
+

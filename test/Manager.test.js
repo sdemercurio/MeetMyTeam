@@ -2,7 +2,7 @@ const Manager = require('../lib/Manager');
 
 describe("officeNumber", () => {
     describe("Initialization", () => {
-        it("Should create an object of name, id, and email if provided a valid argument", () => {
+        it("Should create an object of name, id, email, and office number if provided a valid argument", () => {
             const m = new Manager('Sarah', 100, 'sdemercurioMI@gmail.com');
 
             expect(m.name).toEqual("Sarah");

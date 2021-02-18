@@ -89,7 +89,7 @@ const init = () => {
                     .then(response => {
                         if (response.more === true) {
                             init(managers, engineers, interns)
-                        }else{ (response.more === "No")
+                        }else{ (response.more === false)
                             console.log(managers, engineers, interns);
                             writeHTML(); 
                         }
