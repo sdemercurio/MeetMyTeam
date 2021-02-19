@@ -13,6 +13,8 @@ const interns = [];
 
 // questions for parent class, inherited by the child classes
 
+// TODO combine inquirer validate key with REGEX to avoid invalid entries
+
 const init = () => {
     inquirer.prompt([{
         type: "input",

@@ -1,3 +1,9 @@
+# TODO:
+* combine inquirer validate key with REGEX to avoid invalid entries.
+* Fix test issue at for Manager
+    * expect(m.officeNumber).toEqual("5"); ...with '5' being the fourth argument passed in to 'm' on line 6.
+* Fix wrong value for new Manager, new Engineer, and new Intern.
+
 ## Description
 
 Your task is to build a Node.js command-line application that takes in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person. Testing is key to making code maintainable, so you’ll also write a unit test for every part of your code and ensure that it passes each test.
