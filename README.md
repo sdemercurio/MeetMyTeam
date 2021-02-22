@@ -49,9 +49,3 @@ Unit tests are written for each class, ensuring each test passes. The initial te
 
 Once initial tests have passed, code will then be refactored to deliver a solid, functioning app.
 
-
-### GitHub Repository:
-https://github.com/sdemercurio/company_profile_CLI.git
-
-### Walkthrough Video:
-https://youtu.be/_TJ8VvslErE
