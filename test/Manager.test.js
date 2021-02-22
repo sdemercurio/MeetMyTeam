@@ -3,11 +3,12 @@ const Manager = require('../lib/Manager');
 describe("officeNumber", () => {
     describe("Initialization", () => {
         it("Should create an object of name, id, email, and office number if provided a valid argument", () => {
-            const m = new Manager('Sarah', 100, 'sdemercurioMI@gmail.com');
+            const m = new Manager('Sarah', 100, 'sdemercurioMI@gmail.com', 5);
 
             expect(m.name).toEqual("Sarah");
             expect(m.id).toEqual(100);
             expect(m.email).toEqual("sdemercurioMI@gmail.com");
+            
         });
         it("Will return an integer", () => {
             const t = 1;
