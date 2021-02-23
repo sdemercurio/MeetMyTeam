@@ -1,6 +1,4 @@
-# TODO:
-* combine inquirer validate key with REGEX to avoid invalid entries.
-* Fix wrong value for new Manager, new Engineer, and new Intern.
+## Work in progress
 
 ## Description
 
