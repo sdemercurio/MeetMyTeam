@@ -1,8 +1,5 @@
-# TODO:
-* combine inquirer validate key with REGEX to avoid invalid entries.
-* Fix test issue at for Manager
-    * expect(m.officeNumber).toEqual("5"); ...with '5' being the fourth argument passed in to 'm' on line 6.
-* Fix wrong value for new Manager, new Engineer, and new Intern.
+## Work in progress
+See issues
 
 ## Description
 
