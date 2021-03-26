@@ -1,35 +1,20 @@
-const Manager = require('../lib/Manager');
+const Manager = require("../lib/Manager");
+const Employee = require("../lib/Employee");
 
-describe("officeNumber", () => {
-    describe("Initialization", () => {
-        it("Should create an object of name, id, email, and office number if provided a valid argument", () => {
-            const m = new Manager('Sarah', 100, 'sdemercurioMI@gmail.com', 5);
+test("Can set office number via constructor argument", () => {
+  const testValue = 100;
+  const e = new Manager("Foo", 1, "test@test.com", testValue);
+  expect(e.officeNumber).toBe(testValue);
+});
 
-            expect(m.name).toEqual("Sarah");
-            expect(m.id).toEqual(100);
-            expect(m.email).toEqual("sdemercurioMI@gmail.com");
-            
-        });
-        it("Will return an integer", () => {
-            const t = 1;
-            const m = new Manager('Sarah', 100, 'sdemercurioMI@gmail.com', t);
-            expect(m.officeNumber).toEqual(t);
-        });
+test('getRole() should return "Manager"', () => {
+  const testValue = "Manager";
+  const e = new Manager("Foo", 1, "test@test.com", 100);
+  expect(e.getRole()).toBe(testValue);
+});
 
-        describe("getOfficeNumber", () => {
-            it("Will return an intenger for the office number", () => {
-                const t = 1;
-                const m = new Manager('Sarah', 100, 'sdemercurioMI@gmail.com', t);
-                expect(m.getOfficeNumber()).toEqual(t);
-            })
-        })
-
-        describe("getRole", () => {
-            it("Will override base class and return a string equal to Manager", () => {
-                const t = "Manager";
-                const m = new Manager(t, 'Sarah', 100, 'sdemercurioMI@gmail.com', 1);
-                expect(m.getRole()).toEqual(t);
-            });
-        });
-    });
+test("Can get office number via getOffice()", () => {
+  const testValue = 100;
+  const e = new Manager("Foo", 1, "test@test.com", testValue);
+  expect(e.getOfficeNumber()).toBe(testValue);
 });
